@@ -1,13 +1,15 @@
 .carrito-icono{
     width: 3%;
-    margin-right: 0.5%;
+    margin: 1%;
 }
 
 .texto{
     color: white;
 }
 
-.container-fluid{
+.container-fluid-cart{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }

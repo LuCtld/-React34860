@@ -1,4 +1,6 @@
-
+.container-fluid{
+    background-color: rgb(54, 54, 54);
+}
 .nav-link{
     color: white !important;
 }

@@ -1,0 +1,12 @@
+
+.container-fluid-greeting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulos-principales{
+    color: white !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    margin: 1%;
+}
