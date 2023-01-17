@@ -15,42 +15,42 @@ const Navbar = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                                <Link to='/'>Todos</Link>
+                                <Link className="link"  to='/'>Todos</Link>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                                <Link to='/category/parafina'>Parafinas</Link>
+                                <Link className="link"  to='/category/Parafina'>Parafinas</Link>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                            <Link to='/category/quilla'>Quillas</Link>
+                            <Link className="link"  to='/category/Quilla'>Quillas</Link>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                            <Link to='/category/pita'>Pitas</Link>
+                            <Link className="link"  to='/category/Pita'>Pitas</Link>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                            <Link to='/category/gripa'>Gripas</Link>
+                            <Link className="link"  to='/category/Gripa'>Gripas</Link>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                            <Link to='/category/accesorio'>Accesorios</Link>
+                            <Link className="link"  to='/category/Accesorio'>Accesorios</Link>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                            <Link to='/category/tabla'>Tablas</Link>
+                            <Link className="link"  to='/category/Tabla'>Tablas</Link>
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">
-                            <Link to='/category/funda'>Fundas</Link>
+                            <Link className="link"  to='/category/Funda'>Fundas</Link>
                             </a>
                         </li>
                     </ul>

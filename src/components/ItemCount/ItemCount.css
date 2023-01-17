@@ -1,0 +1,30 @@
+.boton-carro{
+    background-color: rgb(22, 98, 199);
+    border: none;
+    margin: 1%;
+    width: 25%;
+
+}
+
+.boton-carro:hover {
+    background-color: rgb(100, 210, 224)!important;
+}
+
+.boton-agregar{
+    background-color: rgb(22, 98, 199);
+    border: none;
+    margin: 1%;
+    padding: 1%;
+
+}
+
+.boton-agregar:hover {
+    background-color: rgb(100, 210, 224)!important;
+}
+
+.container-fluid-botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

@@ -1,9 +1,17 @@
 .container-fluid{
     background-color: rgb(54, 54, 54);
 }
-.nav-link{
+
+.link{
+    text-decoration: none!important;
     color: white !important;
+
 }
+
+.link:hover {
+    color: rgb(100, 210, 224)!important;
+}
+
 
 .navbar-brand{
     margin-left: 0%;

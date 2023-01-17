@@ -1,12 +1,13 @@
+import './Item.css'
 import { Link } from 'react-router-dom'
 
 const Item = ({id, name, img, price}) => {
     return (
-        <div>
+        <div className='container-fluid-item'>
             <h4>{name}</h4>
-            <img src={img} alt={name}/>
-            <p>$ {price}</p>
-            <Link to={`/item/${id}`}> Ver más</Link>
+            <img className="img-item" src={img} alt={name}/>
+            <p>Precio $ {price}</p>
+            <Link className="link-item"  to={`/item/${id}`}> Ver más</Link>
         </div>
     )
 }

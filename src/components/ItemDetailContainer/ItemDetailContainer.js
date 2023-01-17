@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getProductsById } from "../../asyncMock"
 import ItemDetail from "../ItemDetail/ItemDetail"
-
+import './ItemDetailContainer.css'
 
 
 const ItemDetailContainer = () => {
@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-        <h3> Detalle de Producto</h3>
+        <h3 className="titulos-secundarios"> Detalle de Producto</h3>
         <ItemDetail {...product}/>
         </div>
     )

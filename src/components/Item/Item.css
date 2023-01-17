@@ -1,0 +1,26 @@
+.link-item{
+    text-decoration: none!important;
+    color: rgb(46, 46, 46) !important;
+
+}
+
+.link-item:hover {
+    color: rgb(100, 210, 224)!important;
+}
+
+.container-fluid-item{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;
+    padding: 5%;
+    border-radius: 2%;
+    width: 30%;
+    margin-left: 35%;
+}
+
+.img-item{
+    width: 90%;
+}

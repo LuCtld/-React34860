@@ -1,6 +1,7 @@
 import {useState} from "react"
 import ItemCount from '../ItemCount/ItemCount'
 import {Link} from 'react-router-dom'
+import './ItemDetail.css'
 
 const ItemDetail =({ name, id, img, category, description, stock, price}) => {
     const [quantity, setQuantity] = useState (0)
@@ -16,11 +17,11 @@ const ItemDetail =({ name, id, img, category, description, stock, price}) => {
 
 
     return (
-        <div>
+        <div className="container-fluid-item-detalle">
             <h4>{name}</h4>
             <p>{category}</p>
             <img src={img} alt={name}/>
-            <p>{price}</p>
+            <p>$ {price}</p>
             <p>Descripción: {description}</p>
             {
                 quantity > 0 ? (
