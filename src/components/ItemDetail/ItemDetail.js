@@ -3,16 +3,22 @@ import ItemCount from '../ItemCount/ItemCount'
 import {Link} from 'react-router-dom'
 import './ItemDetail.css'
 
-const ItemDetail =({ name, id, img, category, description, stock, price}) => {
+const ItemDetail =({ name, id, img, category, description, stock, price, setCart}) => {
     const [quantity, setQuantity] = useState (0)
 
-    const handleOnAdd = (qty) => {
-        console.log (`Se agregaron ${qty} ${name} con el id: ${id}`)
-        const productToAdd = {
-            id, name, price, qty
-        }
+    const handleOnAdd = (qty, name, id, price) => {
+        console.log (`Se agregaron ${qty} ${name} con el id: ${id}`, qty)
+
+        const productToAdd = {id, name, price, qty }
+
+        setQuantity(parseInt(qty))
+
+        setCart({ id, name, price, qty})
         console.log(productToAdd)
-        setQuantity (qty)
+
+
+
+
     }
 
 

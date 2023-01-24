@@ -5,7 +5,7 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 import './ItemDetailContainer.css'
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({ setCart }) => {
     const [product, setProduct] = useState({})
     const { productId } = useParams()
 
@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
         <h3 className="titulos-secundarios"> Detalle de Producto</h3>
-        <ItemDetail {...product}/>
+        <ItemDetail {...product} setCart={setCart}/>
         </div>
     )
 }
