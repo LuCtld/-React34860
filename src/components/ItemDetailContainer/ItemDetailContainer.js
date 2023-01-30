@@ -27,4 +27,4 @@ const ItemDetailContainer = ({ setCart }) => {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
