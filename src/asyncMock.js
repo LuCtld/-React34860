@@ -91,4 +91,3 @@ export const getProductsById = (id) => {
         }, 2000);
     })
 }
-

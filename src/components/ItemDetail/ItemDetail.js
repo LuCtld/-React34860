@@ -5,6 +5,7 @@ import './ItemDetail.css'
 import { CartContext } from "../Context/CartContext"
 
 
+
 const ItemDetail =({ name, id, img, category, description, stock, price}) => {
     const [quantity, setQuantity] = useState (0)
 
