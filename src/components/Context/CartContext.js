@@ -1,15 +1,17 @@
-import {UseState, createContext, children} from 'react';
+import {UseState, createContext} from 'react';
 
 export const CartContext = createContext ({
     cart:[]
 })
 
-export const cartProvider = () => {
+export const cartProvider = (children) => {
     const [cart, setCart] = UseState([])
 
     const addItem = (productToAdd) =>{
         if(!isInCart(productToAdd.id)){
             setCart(prev =>[...prev, productToAdd])
+        }else{
+            console.error("El producto ya se encuentra en el carrito")
         }
     }
 
@@ -26,10 +28,11 @@ export const cartProvider = () => {
         return accu
 }
 
+
     const totalQuantity = getTotalQuantity()
 
 return(
-    <CartContext.Provider value={{cart, addItem, totalQuantity}}>
+    <CartContext.Provider value={{cart, addItem, isInCart, totalQuantity}}>
         {children}
     </CartContext.Provider>
 )

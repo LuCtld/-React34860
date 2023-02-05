@@ -4,10 +4,11 @@ import {Link} from 'react-router-dom'
 import './ItemDetail.css'
 import { CartContext } from "../Context/CartContext"
 
+
 const ItemDetail =({ name, id, img, category, description, stock, price}) => {
     const [quantity, setQuantity] = useState (0)
 
-    const {addItem} = useState (CartContext)
+    const {addItem} = useContext (CartContext)
 
     const handleOnAdd = (quantity) => {
         console.log (`Se agregaron ${quantity}, ${name} `, quantity, price)
