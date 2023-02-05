@@ -11,6 +11,7 @@ export const cartProvider = () => {
         if(!isInCart(productToAdd.id)){
             setCart(prev =>[...prev, productToAdd])
         }
+    }
 
     const isInCart = (id) => {
         return cart.some (prod => prod.id === id)
@@ -23,10 +24,9 @@ export const cartProvider = () => {
             accu += prod.quantity
         })
         return accu
-    }
-    const totalQuantity = getTotalQuantity()
 }
 
+    const totalQuantity = getTotalQuantity()
 
 return(
     <CartContext.Provider value={{cart, addItem, totalQuantity}}>
