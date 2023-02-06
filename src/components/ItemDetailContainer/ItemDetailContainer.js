@@ -28,7 +28,7 @@ const ItemDetailContainer = ({ setCart }) => {
         } finally {
             setLoading(false)
         }
-        
+
         })()
     }, [productId])
 
