@@ -13,7 +13,6 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         (async() => {
-            
 
             const productsRef = collection(db, 'products')
 
