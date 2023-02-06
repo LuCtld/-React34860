@@ -1,5 +1,5 @@
 import './ItemListContainer.css'
-import { useState, useEffect, setLoading } from 'react'
+import { useState, useEffect} from 'react'
 import ItemList from '../ItemList/ItemList.js'
 import { useParams } from 'react-router-dom'
 import { getDocs, collection } from 'firebase/firestore'
@@ -13,31 +13,25 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         (async() => {
-            setLoading(true)
+            
 
             const productsRef = collection(db, 'products')
 
             try{
                 const snapshot = await getDocs(productsRef)
-
-                const productsAdapted = snapshot.docChanges.map(doc => {
-                    const fields = doc.data()
-
-                    return {id: doc.id, ...fields}
+                const productsAdapted = snapshot.docs.map(doc => {
+                    return {id: doc.id, ...doc.data()}
                 })
-
                 setProducts(productsAdapted)
 
             } catch(error){
                 console.log(error)
-            } finally {
-                setLoading(false)
             }
 
     })()
-    },[categoryId])
+    },[])
 
-
+console.log(products, 'productos')
     return (
         <div >
             <h1 className="titulos-principales">{greeting}</h1>
