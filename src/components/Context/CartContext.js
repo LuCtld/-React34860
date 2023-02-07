@@ -7,13 +7,16 @@ export const CartContext = createContext ({
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
-    const addItem = (productToAdd) =>{
-        if(!isInCart(productToAdd.id)){
-            setCart(prev =>[...prev, productToAdd])
+    const addItem =(item, quantity) =>{
+        if(isInCart(item.id)){
+          setCart (cart.map(product =>{
+            return product.id === item.id ?{...product,quantity:product.quantity + quantity} : product
+          }));
+    
         }else{
-            console.error("El producto ya se encuentra en el carrito")
+          setCart ([...cart,{...item,quantity}]);
         }
-    }
+      }
 
     const isInCart = (id) => {
         return cart.some (prod => prod.id === id)

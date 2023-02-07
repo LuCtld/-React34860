@@ -54,7 +54,7 @@ const Checkout = () => {
 
             const orderAdded =await addDoc (orderRef, objOrder)
 
-            const {id} = orderAdded 
+            const {id} = orderAdded
             console.log (id)
 
         }

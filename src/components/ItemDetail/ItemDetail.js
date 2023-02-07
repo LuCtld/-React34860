@@ -6,6 +6,7 @@ import { CartContext } from "../Context/CartContext"
 
 
 
+
 const ItemDetail =({ name, id, img, category, description, stock, price}) => {
     const [quantity, setQuantity] = useState (0)
 
@@ -30,7 +31,7 @@ const ItemDetail =({ name, id, img, category, description, stock, price}) => {
             <p>Descripción: {description}</p>
             {
                 quantity > 0 ? (
-                    <Link >Finalizar Compra</Link>
+                    <Link to={"/cart"}>Finalizar Compra</Link>
                 ) : (
                     <ItemCount stock={stock} onAdd={handleOnAdd}/>
                 )
