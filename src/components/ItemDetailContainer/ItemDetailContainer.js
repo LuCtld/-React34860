@@ -2,8 +2,9 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import './ItemDetailContainer.css'
-import { getDoc } from "firebase/firestore"
+import { getDoc, doc } from "firebase/firestore"
 import { db } from "../../services/firebase/firebaseConfig"
+
 
 
 const ItemDetailContainer = ({ setCart }) => {
@@ -13,23 +14,22 @@ const ItemDetailContainer = ({ setCart }) => {
     const { productId } = useParams()
 
     useEffect (() => {
-        (async() =>{
-        const producRef = (db, 'products', productId)
+        const getProducto = async () => {
 
-        try{
-            const snapshot = await getDoc(producRef)
+            const queryRef = doc(db, "products", productId);
 
-            const fields = snapshot.data()
-            const productAdapted = {id: snapshot.id, ...fields}
+            const response = await getDoc(queryRef);
 
-            setProduct(productAdapted)
-        } catch (error){
-            console.log(error)
-        } finally {
-            setLoading(false)
-        }
-
-        })()
+            const newItem = {
+                id: response.id,
+                ...response.data(),
+            };
+            setTimeout(()=>{
+                setProduct(newItem);
+                setLoading(false)
+            }, 2000)
+            };
+            getProducto();
     }, [productId])
 
     return (
