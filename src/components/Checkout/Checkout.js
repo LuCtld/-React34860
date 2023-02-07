@@ -15,6 +15,7 @@ const Checkout = () => {
         total
     }
     
+    
     return (
         <div>
             <h2>Checkout</h2>
