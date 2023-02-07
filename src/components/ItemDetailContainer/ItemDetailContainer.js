@@ -9,7 +9,7 @@ import { db } from "../../services/firebase/firebaseConfig"
 
 const ItemDetailContainer = ({ setCart }) => {
     const [product, setProduct] = useState({})
-    const [loading, setLoading] = useState(true)
+    const [setLoading] = useState(true)
 
     const { productId } = useParams()
 
