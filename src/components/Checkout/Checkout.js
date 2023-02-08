@@ -2,6 +2,7 @@ import {collection, query, where, documentId, getDocs, writeBatch, addDoc} from 
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import { db } from "../../services/firebase/firebaseConfig"
+import "./Checkout.css"
 
 const Checkout = () => {
 
@@ -11,7 +12,7 @@ const Checkout = () => {
         const objOrder = {
             buyer:{
                 name: "Lucia",
-                phone: "123456",
+                phone: "12345678910",
                 email: "Contact@lucia.com"
             },
 
@@ -57,14 +58,16 @@ const Checkout = () => {
             const {id} = orderAdded
             console.log (id)
 
+        } else {
+            console.error ("Hay prodctos sin stock")
         }
 
     }
 
     return (
         <div>
-            <h2>Checkout</h2>
-            <button onClick={createOrder}>Generar Orden</button>
+            <h2 className="titulo-checkout">Checkout</h2>
+            <button className="boton-checkout"onClick={createOrder}>Generar Orden</button>
 
         </div>
     )

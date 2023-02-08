@@ -1,0 +1,17 @@
+.titulos-principales{
+    color: white !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.checkoutlink{
+    text-decoration: none;
+    background-color: rgb(51, 51, 250);
+    border: none;
+    border-radius: 2%;
+    margin-left: 15%;
+    padding: 1%;
+    color: white;
+}
