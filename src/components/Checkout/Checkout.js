@@ -1,5 +1,5 @@
 import {collection, query, where, documentId, getDocs, writeBatch, addDoc} from "firebase/firestore"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../Context/CartContext";
 import { db } from "../../services/firebase/firebaseConfig"
 import "./Checkout.css"
@@ -7,67 +7,50 @@ import "./Checkout.css"
 const Checkout = () => {
 
     const {cart, total} = useContext(CartContext)
+    const [name, setName] = useState("")
+    const [phone,setPhone] = useState("")
+    const [email, setEmail] = useState("")
+
 
     const createOrder = async () => {
         const objOrder = {
-            buyer:{
-                name: "Lucia",
-                phone: "12345678910",
-                email: "Contact@lucia.com"
-            },
-
-            items: cart,
-            total
+        name: name,
+        phone: phone,
+        email: email,
+        items: cart,
+        total
+        }
+        const col = collection(db,"Orders")
+        const order = await addDoc(col,objOrder)
+        console.log("El ID es:",order.id)
         }
 
-        const batch =writeBatch(db)
 
-        const ids = cart.map(prod => prod.id)
-        console.log(ids)
-
-        const productRef = query(collection(db, "products"), where (documentId()), "in", ids)
-
-        const productsAddedToCartFirestone = await getDocs(productRef)
-
-        const {docs} = productsAddedToCartFirestone
-
-        const outOfStock = []
-
-        docs.forEach(doc => {
-            const dataDocs = doc.data()
-            const stockDb = dataDocs.stock 
-
-            const productAddedToCart = cart.find (prod => prod.id === doc.id)
-            const prodQuantity = productAddedToCart.prodQuantity
-
-            if(stockDb >= prodQuantity){
-                batch.update(doc.ref, { stock: stockDb - prodQuantity})
-            } else {
-            }
-            outOfStock.push({ id: doc.id, ...dataDocs})
-        })
-
-
-        if(outOfStock.length === 0){
-            await batch.commit()
-
-            const orderRef = collection (db, "orders")
-
-            const orderAdded =await addDoc (orderRef, objOrder)
-
-            const {id} = orderAdded
-            console.log (id)
-
-        } else {
-            console.error ("Hay prodctos sin stock")
-        }
-
-    }
 
     return (
         <div>
             <h2 className="titulo-checkout">Checkout</h2>
-            <button className="boton-checkout"onClick={createOrder}>Generar Orden</button>
+
+            <div>
+            <h2 className="titulo-checkout-dos">Ingrese sus datos</h2>
+            </div>
+
+            <form className="formulario">
+            <div>
+                <input type="text" value={name} placeholder="Nombre"  onChange={(event)=> setName(event.target.value)}/>
+            </div>
+
+            <div>
+                <input type="text" value={phone} placeholder="Telefono"  onChange={(event)=> setPhone(event.target.value)}/>
+            </div>
+
+            <div>
+                <input type="text" value={email} placeholder="Mail"  onChange={(event)=> setEmail(event.target.value)}/>
+            </div>
+
+            </form>
+
+            <button className="boton-checkout"onClick={createOrder} >Generar Orden</button>
 
         </div>
     )
