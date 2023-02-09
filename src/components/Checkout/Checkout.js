@@ -1,12 +1,13 @@
-import {collection, query, where, documentId, getDocs, writeBatch, addDoc} from "firebase/firestore"
-import { useContext, useState } from "react";
+import {collection, addDoc} from "firebase/firestore"
+import { useContext, useState} from "react";
 import { CartContext } from "../Context/CartContext";
 import { db } from "../../services/firebase/firebaseConfig"
 import "./Checkout.css"
 
+
 const Checkout = () => {
 
-    const {cart, total} = useContext(CartContext)
+    const {cart, total, clear} = useContext(CartContext)
     const [name, setName] = useState("")
     const [phone,setPhone] = useState("")
     const [email, setEmail] = useState("")
@@ -23,8 +24,8 @@ const Checkout = () => {
         const col = collection(db,"Orders")
         const order = await addDoc(col,objOrder)
         console.log("El ID es:",order.id)
-        }
-
+        clear()
+    }
 
 
     return (
