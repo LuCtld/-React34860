@@ -16,12 +16,21 @@
 .titulo-checkout-dos{
     color: white !important;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: xx-large;
-    margin-left: 42%;
+    font-size: x-large;
     margin-top: 0%;
+    margin-left: 1%;
 }
 
 .formulario{
     margin-left: 43%;
     margin-bottom: 2%;
+}
+
+.textoid{
+    color: white !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    margin-left: 37%;
+    margin-top: 0%;
+    margin-bottom: 1%;
 }
