@@ -72,7 +72,7 @@ const Checkout = () => {
         console.error('hay productos fuera de stock')
     }
 } catch (error) {
-    console.error(error)
+    console.log(error)
 } finally {
     setLoading(false)
 }
