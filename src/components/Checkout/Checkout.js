@@ -2,6 +2,7 @@ import {collection, addDoc} from "firebase/firestore"
 import { useContext, useState} from "react";
 import { CartContext } from "../Context/CartContext";
 import { db } from "../../services/firebase/firebaseConfig"
+import { ToastContainer, toast } from 'react-toastify'; 
 import "./Checkout.css"
 
 
@@ -14,6 +15,7 @@ const Checkout = () => {
     const [email2, setEmail2] = useState("");
     const [showForm, setShowForm] = useState(true);
     const [orderId, setOrderId] = useState(null);
+
 
     const createOrder = async () => {
     const objOrder = {
@@ -35,6 +37,7 @@ const Checkout = () => {
     const validForm = (e) =>{
     e.preventDefault ();
     if (email !== email2) {
+        toast.warn("Los mails ingresados no coinciden")
         console.log(email,email2, "Email incorrecto");
     } else {
         createOrder ();
@@ -96,6 +99,8 @@ const Checkout = () => {
         <button className="boton-checkout" onClick={validForm} onChange={createOrder}>
         Generar Orden
         </button>
+        <ToastContainer/>
+
     </div>
     );
 };
