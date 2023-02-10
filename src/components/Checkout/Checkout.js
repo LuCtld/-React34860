@@ -30,21 +30,22 @@ const Checkout = () => {
     clear();
     };
 
-    const validForm = (e, email, email2) =>{
-    e.preventDefault ();
-    if (email.value !== email2.value) {
-        console.log("Email incorrecto")
-        clear()
 
-    }
-    if (email === email2) {
+
+    const validForm = (e) =>{
+    e.preventDefault ();
+    if (email !== email2) {
+        console.log(email,email2, "Email incorrecto");
+    } else {
         createOrder ();
     }
 }
 
+
     return (
     <div>
         <h2 className="titulo-checkout">Checkout</h2>
+        
 
         <div>
             <h2 className="titulo-checkout-dos">Ingrese sus datos</h2>
@@ -89,7 +90,7 @@ const Checkout = () => {
             </div>
         </form>
     ) : (
-        <div>Su ID de compra es: {orderId}</div>
+        <div className="textoid">Su ID de compra es: {orderId}</div>
     )}
 
         <button className="boton-checkout" onClick={validForm} onChange={createOrder}>

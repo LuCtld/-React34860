@@ -9,15 +9,18 @@ Descargar /node_modules
 Iniciar npm start en la consola
 
 Componentes utilizados:
+AppRouter
 NavBar
 Cart
+CartList
 CartWidget
 Item
+ItemCart
+ItemCount
+ItemDetail
 ItemList
 ItemListContainer
-ItemDetailContainer
-ItemDetail
-ItemCount
+ItemDetailContaine
 CheckOut
 
 Se utiliza HTML, CSS, JavaScript, ReactJS, Firebase

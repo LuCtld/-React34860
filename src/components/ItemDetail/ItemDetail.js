@@ -31,7 +31,7 @@ const ItemDetail =({ name, id, img, category, description, stock, price}) => {
             <p>Descripción: {description}</p>
             {
                 quantity > 0 ? (
-                    <Link to={"/cart"}>Finalizar Compra</Link>
+                    <Link to={"/checkout"}>Finalizar Compra</Link>
                 ) : (
                     <ItemCount stock={stock} onAdd={handleOnAdd}/>
                 )
@@ -41,4 +41,4 @@ const ItemDetail =({ name, id, img, category, description, stock, price}) => {
     )
 }
 
-export default ItemDetail 
+export default ItemDetail
