@@ -3,13 +3,13 @@ import ItemCount from '../ItemCount/ItemCount'
 import {Link} from 'react-router-dom'
 import './ItemDetail.css'
 import { CartContext } from "../Context/CartContext"
-import Loader from "../Loader/Loader"
+import Loader from '../Loader/Loader'
 
 
 
 const ItemDetail =({ name, id, img, category, description, stock, price}) => {
 
-    const [loading, setLoading] = useState(false) 
+    const [loading] = useState() 
 
     const [quantity, setQuantity] = useState (0)
 
@@ -21,6 +21,15 @@ const ItemDetail =({ name, id, img, category, description, stock, price}) => {
         setQuantity(parseInt(quantity))
 
         addItem ({id, name, quantity, price})
+
+        if (loading) {
+            setTimeout(() => {
+                return <Loader loader='Cargando...' />
+            }, 2000)
+
+        }else {
+            return <Loader loader='Error al cargar intente nuevamente' />
+        }
 
     }
 

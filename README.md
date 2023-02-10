@@ -1,5 +1,7 @@
 Point Norte Surf Shop :: e-commerce
 
+Lucia Cataldo / Curso React JS CODER HOUSE / Comisión 34860
+
 Objetivo del proyecto realizar un e-commerce donde se pueda visualizar el catalogo de productos, filtrarlos por categoria, ingresar a cada uno de los productos, agregar la cantidad deseada, acceder al carrito donde se encuentra el precio y detalle del producto o producots agregados y fianlmente obtener los datos del comprador y generar la orden de compra.
 
 Pasos a seguir:

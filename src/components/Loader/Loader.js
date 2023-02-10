@@ -1,13 +1,13 @@
-import React from "react";
-import {Spinner} from "reactstrap"
+import'./Loader.css'
 
-const Loader =() =>{
+const Loader = ({loader}) => {
     return (
-        <div>
-             <Spinner color="primary"/>
+        <div className='ContainerLoader'>
+            <h1 className='Loader-texto'>{loader} </h1>
         </div>
-    )
 
+     
+    )
 }
 
 export default Loader

@@ -4,6 +4,9 @@ import { CartContext } from "../Context/CartContext";
 import { db } from "../../services/firebase/firebaseConfig"
 import { ToastContainer, toast } from 'react-toastify'; 
 import "./Checkout.css"
+import React from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Checkout = () => {
@@ -36,16 +39,23 @@ const Checkout = () => {
 
     const validForm = (e) =>{
     e.preventDefault ();
-    if (email !== email2) {
-        toast.warn("Los mails ingresados no coinciden")
+    if (name == '' && phone == '' && email == ''  ) {
+        toast.warn("Porfavor complete los datos", {
+            position: toast.POSITION.TOP_CENTER,
+        })
         console.log(email,email2, "Email incorrecto");
-    } else {
+    } else if(email !== email2 ) {
+        toast.warn("los emails deben ser iguales")
+
+    }else{
         createOrder ();
+
     }
 }
 
 
     return (
+    <>
     <div>
         <h2 className="titulo-checkout">Checkout</h2>
         
@@ -95,13 +105,14 @@ const Checkout = () => {
     ) : (
         <div className="textoid">Su ID de compra es: {orderId}</div>
     )}
-
+<ToastContainer autoClose={8000}/>
         <button className="boton-checkout" onClick={validForm} onChange={createOrder}>
         Generar Orden
         </button>
-        <ToastContainer/>
 
     </div>
+
+    </>
     );
 };
 
