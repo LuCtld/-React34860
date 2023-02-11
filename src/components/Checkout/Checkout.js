@@ -5,6 +5,7 @@ import { db } from "../../services/firebase/firebaseConfig"
 import { ToastContainer, toast } from 'react-toastify'; 
 import "./Checkout.css"
 import React from 'react';
+import CartList from "../CartList/CartList";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -57,15 +58,14 @@ const Checkout = () => {
     return (
     <>
     <div>
-        <h2 className="titulo-checkout">Checkout</h2>
-        
+
+        {showForm ? (
+        <form className="formulario">
+            <h2 className="titulo-checkout">Checkout</h2>
 
         <div>
             <h2 className="titulo-checkout-dos">Ingrese sus datos</h2>
         </div>
-
-        {showForm ? (
-        <form className="formulario">
             <div>
             <input
                 type="text"
@@ -101,14 +101,15 @@ const Checkout = () => {
                 onChange={(event) => setEmail2(event.target.value)}
             />
             </div>
-        </form>
-    ) : (
-        <div className="textoid">Su ID de compra es: {orderId}</div>
-    )}
-<ToastContainer autoClose={8000}/>
+            <ToastContainer autoClose={8000}/>
         <button className="boton-checkout" onClick={validForm} onChange={createOrder}>
         Generar Orden
         </button>
+        </form>
+    ) : (
+        <div className="textoid">Su ID de compra es: {orderId}, Gracias vuelva pronto!</div>
+    )}
+
 
     </div>
 
