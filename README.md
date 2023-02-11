@@ -8,6 +8,8 @@ Pasos a seguir:
 Instalar NodeJS, npm
 Ejecutar comando npx create-react-app
 Descargar /node_modules
+Instalar npm i bootstrap@5.3.0-alpha1
+Instalar npm install --save react-toastify
 Iniciar npm start en la consola
 
 Componentes utilizados:
@@ -26,6 +28,7 @@ ItemDetailContaine
 CheckOut
 
 Se utiliza HTML, CSS, JavaScript, ReactJS, Firebase
+Bootstrap, Toastify
 
 backend34860
 
